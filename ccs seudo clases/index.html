@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo de Pseudo-clases CSS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>Pseudo-clases CSS</h1>
+    <p>Interactúa con cada ejemplo para ver la pseudo-clase en acción.</p>
+  </header>
+
+  <main>
+    <!-- Enlaces -->
+    <section class="card">
+      <h2>:link / :visited / :hover / :active</h2>
+      <p>
+        <a class="demo-link" href="https://developer.mozilla.org" target="_blank">Enlace de ejemplo</a>
+      </p>
+      <p class="hint">Pasa el mouse, haz clic y observa los estados. Los visitados cambian de color.</p>
+    </section>
+
+    <!-- Botones -->
+    <section class="card">
+      <h2>:hover / :active / :focus / :focus-visible</h2>
+      <button class="demo-btn">Pasa el mouse</button>
+      <button class="demo-btn" disabled>Deshabilitado</button>
+      <p class="hint">El segundo botón usa <code>:disabled</code>.</p>
+    </section>
+
+    <!-- Formulario -->
+    <section class="card">
+      <h2>:focus / :required / :valid / :invalid / :placeholder-shown</h2>
+      <form class="demo-form">
+        <label>
+          Nombre (requerido)
+          <input type="text" required placeholder="Escribe tu nombre">
+        </label>
+        <label>
+          Email (requerido)
+          <input type="email" required placeholder="tu@email.com">
+        </label>
+        <label>
+          Edad (opcional)
+          <input type="number" min="1" max="120" placeholder="18">
+        </label>
+      </form>
+      <p class="hint">Los campos válidos se ponen verdes; los inválidos, rojos.</p>
+    </section>
+
+    <!-- Checkbox / radio -->
+    <section class="card">
+      <h2>:checked</h2>
+      <label class="toggle">
+        <input type="checkbox" checked>
+        <span>Acepto los términos</span>
+      </label>
+      <div class="radio-group">
+        <label><input type="radio" name="plan" value="basico" checked> Básico</label>
+        <label><input type="radio" name="plan" value="pro"> Pro</label>
+      </div>
+      <p class="hint">Los elementos marcados cambian de estilo con <code>:checked</code>.</p>
+    </section>
+
+    <!-- Listas estructurales -->
+    <section class="card">
+      <h2>:first-child / :last-child / :nth-child / :nth-of-type</h2>
+      <ul class="demo-list">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+        <li>Elemento 6</li>
+      </ul>
+      <p class="hint">Pares en gris, impares en azul, primero y último resaltados.</p>
+    </section>
+
+    <!-- :not -->
+    <section class="card">
+      <h2>:not()</h2>
+      <ul class="demo-not">
+        <li>Normal</li>
+        <li class="destacado">Destacado (excluido)</li>
+        <li>Normal</li>
+        <li>Normal</li>
+      </ul>
+      <p class="hint">Todos los <code>li</code> menos <code>.destacado</code> reciben estilo.</p>
+    </section>
+
+    <!-- :empty -->
+    <section class="card">
+      <h2>:empty</h2>
+      <div class="empty-demo">
+        <div class="box"></div>
+        <div class="box">Con contenido</div>
+        <div class="box"> </div>
+      </div>
+      <p class="hint">Solo la primera caja está realmente vacía (la tercera tiene un espacio).</p>
+    </section>
+
+    <!-- :target -->
+    <section class="card">
+      <h2>:target</h2>
+      <p><a href="#objetivo" class="demo-link">Ir al objetivo</a></p>
+      <div id="objetivo" class="target-box">Soy el elemento objetivo</div>
+      <p class="hint">Se resalta cuando la URL apunta a él (<code>#objetivo</code>).</p>
+    </section>
+
+    <!-- :is / :where / :has -->
+    <section class="card">
+      <h2>:is() / :where() / :has()</h2>
+      <div class="modern-demo">
+        <h3>Título con :is</h3>
+        <p class="nota">Párrafo con clase nota</p>
+        <div class="contenedor">
+          <span>Contenedor con un span dentro</span>
+        </div>
+      </div>
+      <p class="hint">El contenedor cambia con <code>:has(span)</code>; los títulos usan <code>:is()</code>.</p>
+    </section>
+
+    <!-- Pseudo-elementos -->
+    <section class="card">
+      <h2>::before / ::after / ::first-line / ::first-letter / ::selection</h2>
+      <p class="pseudo-texto">
+        Este párrafo demuestra pseudo-elementos. La primera letra es grande,
+        la primera línea es distinta, y hay contenido añadido antes y después.
+      </p>
+      <p class="hint">Selecciona el texto para ver <code>::selection</code>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Demo de pseudo-clases y pseudo-elementos CSS</p>
+  </footer>
+</body>
+</html>
